@@ -1,7 +1,7 @@
 platform: Common
 buildPlatform:
-displayName: "Get Approvel via Email"
-description: "Email notification to send approval for the step"
+displayName: "Get Approval via Email"
+description: "Get approval for the publish with a link sent to the specified email address"
 marketPlace: "AppleAppStore"
 runOn: "Server"
 
