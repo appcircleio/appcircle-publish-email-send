@@ -9,11 +9,22 @@ runOn: "Server"
 inputs:
 - key: "AC_APPROVAL_EMAILS"
   defaultValue: ""
+  isRequired: false
+  title: All Required Approval Emails
+  description: "Enter required email addresses with comma to send special Approve and Reject links"
+  helpText: All email in that field must approve
+- key: "AC_OPTIONAL_APPROVAL_EMAILS"
+  defaultValue: ""
+  isRequired: false
+  title: Optional Emails to Approve
+  description: "Enter optional email addresses to send special Approve and Reject links"
+  helpText: Optional approval emails may need to approve if minumum number of approvals lower than required
+- key: "AC_MINIMUM_APPROVAL_COUNT"
+  defaultValue: "1"
   isRequired: true
-  title: Email
-  description: "Enter an email address to send special Approve and Reject links"
-  helpText:
-  validation: ^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$
+  title: Minimum Required Approval Count
+  description: "All Required email plus optional email approvals must equal or greater to this"
+  helpText: Step will not be succeeded unless minium number of approvals full-filled
 processFilename: bash
 processArguments: '%AC_STEP_TEMP%/main.sh'
 files:
